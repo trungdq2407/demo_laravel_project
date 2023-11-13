@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +30,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::post('product/create', [ProductController::class, 'createProduct'])->name('product.create');
+Route::get('products', [ProductController::class, 'show'])->name('products.show');
+Route::get('product/{id}', [ProductController::class, 'editProduct'])->name('product.edit');
+Route::put('product/{product}', [ProductController::class, 'updateProduct'])->name('product.update');
+Route::delete('product/{id}', [ProductController::class, 'deleteProduct'])->name('product.delete');
+
 require __DIR__.'/auth.php';
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

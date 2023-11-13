@@ -13,8 +13,8 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- Scripts -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+<script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
 <body class="font-sans text-gray-900 antialiased">
